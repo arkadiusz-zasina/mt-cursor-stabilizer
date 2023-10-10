@@ -1,0 +1,25 @@
+{ 
+  "manifest_version": 3,
+  "name": "Cursor Stabilizer",
+  "version": "1.0",
+  "description": "Cursor Stabilizer",
+  "icons": { "128": "/images/logo-128.png" },
+  "action": {
+    "default_icon": "/images/logo-128.png",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content_script.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "matches": ["<all_urls>"],
+    "resources": ["scripts/content.js", "scripts/helpers.js", "styles/content.css", "images/logo-128.png", "images/cursor.svg"]
+  }]
+}
